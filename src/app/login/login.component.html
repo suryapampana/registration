@@ -1,0 +1,92 @@
+<div class="body">
+  <div class="container">
+    <div class="forms">
+      <div class="form-content">
+        <div class="login-form">
+          <div class="title">Signin</div>
+          <form #loginform="ngForm" (ngSubmit)="loginEmployee()">
+            <small class="text-danger">{{ msg }}</small>
+
+            <div class="" input-boxes>
+              <div class="input-box">
+                <input
+                  type="userid"
+                  class="form-control"
+                  aria-describedby="useridHelp"
+                  placeholder="UserId"
+                  [(ngModel)]="employee.userId"
+                  [ngModelOptions]="{ standalone: true }"
+                  required
+                  #userid="ngModel"
+                  [class.is-invalid]="userid.invalid && userid.touched"
+                  pattern="[A-Za-z]{8,}"
+                />
+                <!-- <small class="text-danger" [class.d-none]="userid.valid || userid.untouched">UserId is required</small> -->
+                <div *ngIf="userid.errors && userid.invalid && userid.touched">
+                  <small class="text-danger" *ngIf="userid.errors.required"
+                    >User Id is required</small
+                  >
+                  <small class="text-danger" *ngIf="userid.errors.pattern"
+                    >Enter Eight Letter User Id..!</small
+                  >
+                </div>
+                <!-- <div id="useridHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+              </div>
+
+              <div class="input-box">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  [(ngModel)]="employee.password"
+                  [ngModelOptions]="{ standalone: true }"
+                  required
+                  #password="ngModel"
+                  [class.is-invalid]="password.invalid && password.touched"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                />
+                <!-- <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small> -->
+                <div
+                  *ngIf="
+                    password.errors && password.invalid && password.touched
+                  "
+                >
+                  <small class="text-danger" *ngIf="password.errors.required"
+                    >Password is required</small
+                  >
+                  <small class="text-danger" *ngIf="password.errors.pattern"
+                    >Enter Correct Password..!</small
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="text">
+              <a class="text-primary" style="cursor: pointer"
+                >Forgot password?</a
+              >
+            </div>
+
+            <div class="button input-box">
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+
+          <div class="text sign-up-text">
+            <small class="text sign-up-text">New User ? </small>
+            <small
+              class="text text-primary"
+              style="cursor: pointer"
+              [routerLink]="['/registration']"
+              >Sign Up here</small
+            >
+          </div>
+          <!-- <small class="text-primary" (click)="gotoregistration()">New User ? Sign Up here</small> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- {{loginform.form.valid}}
+    [disabled] ="loginform.form.invalid" -->

@@ -1,0 +1,108 @@
+<div class="container">
+    <h1>Registration</h1>
+  <form #registrationform="ngForm"  (ngSubmit)="registerEmployee()">
+    <small class="text-danger">{{msg}}</small>
+
+    <div class="mb-3">
+      <label for="exampleInputUserId" class="form-label"
+        ><h6>UserId:</h6></label>
+      <input
+        type="userid"
+        class="form-control"
+        aria-describedby="useridHelp"
+        placeholder="UserId"
+        [(ngModel)]="employee.userId"
+        [ngModelOptions]="{ standalone: true }"
+        required
+        #userid="ngModel"
+        [class.is-invalid]="userid.invalid && userid.touched"
+        pattern="[A-Za-z]{8,}"
+      />
+      <!-- <small class="text-danger" [class.d-none]="userid.valid || userid.untouched">UserId is required</small> -->
+      <div *ngIf="userid.errors && userid.invalid && userid.touched">
+        <small class="text-danger" *ngIf="userid.errors.required"
+          >User Id is required</small
+        >
+        <small class="text-danger" *ngIf="userid.errors.pattern"
+          >Enter Eight Letter User Id..!</small
+        >
+      </div>
+      <!-- <div id="useridHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        ><h6>Password:</h6></label
+      >
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        [(ngModel)]="employee.password"
+        [ngModelOptions]="{ standalone: true }"
+        required
+        #password="ngModel"
+        [class.is-invalid]="password.invalid && password.touched"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      />
+      <!-- <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small> -->
+      <div *ngIf="password.errors && password.invalid && password.touched">
+        <small class="text-danger" *ngIf="password.errors.required"
+          >Password is required</small
+        >
+        <small class="text-danger" *ngIf="password.errors.pattern"
+          >Enter Correct Password..!</small
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputConformPassword" class="form-label"
+          ><h6>Conform Password:</h6></label
+        >
+        <input
+          type="conformpassword"
+          class="form-control"
+          placeholder="Conform Password"
+          (ngModel)="employee.conformPassword"
+          [ngModelOptions]="{ standalone: true }"
+          required
+          #conformpassword="ngModel"
+          [class.is-invalid]="conformpassword.invalid && conformpassword.touched"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        />
+         <small class="text-danger" [class.d-none] = "(conformpassword.value == password.value) || conformpassword.untouched">Password & Conform Password should be same</small>
+        <!-- <div *ngIf="conformpassword.errors && conformpassword.invalid && conformpassword.touched">
+          <small class="text-danger" *ngIf="conformpassword.errors.required"
+            >Conform Password is required</small
+          >
+          <small class="text-danger" *ngIf="conformpassword.errors.pattern"
+            >Enter Correct Conform Password..!</small
+          >
+        </div> -->
+       
+      </div>
+
+    <!-- <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+
+    <button      
+      type="submit"
+      class="btn btn-primary"
+    >
+      SignUp
+    </button>
+  </form>
+  <div>
+    <small>Existing User ? </small
+    ><small
+      class="text-primary"
+      style="cursor: pointer"
+      [routerLink]="['/login']"
+      >Signin here</small
+    >
+  </div>
+  <!-- <small class="text-primary" (click)="gotoregistration()">New User ? Sign Up here</small> -->
+</div>

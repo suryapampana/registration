@@ -20,9 +20,9 @@ export class RegistrationService {
     return this._http.post<any>("http://localhost:8080/registeremployee", employee);
   }
 
-  handleError(error: Response){
+ /*  handleError(error: Response){
     this.message = error;
           this.status = false;
 
-  }
+  } */
 }
