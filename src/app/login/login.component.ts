@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
   loginEmployee(){
     this._service.loginEmployeeFromRemote(this.employee).subscribe(
       data => {
+       localStorage.setItem("userId", this.employee.userId!);
+        localStorage.setItem("password", this.employee.password!);  
         console.log("response recieved");
         this._router.navigate(['/home']) 
       },

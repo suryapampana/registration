@@ -119,12 +119,14 @@
     background: #5b13b9;
   } 
 
-  /* .image{
-    background-image: url('Capgemini.jpg');
+  .image{
+    background-image: url('Capgemini-2.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
-  } */
+    padding-left: 50px;
+    background-size: 1100px;
+    
+  } 
   
   /* .forms .form-content .text a:hover{
     text-decoration: underline;

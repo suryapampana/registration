@@ -24,11 +24,11 @@ export class RegistrationComponent implements OnInit {
     this._service.registerEmployeeFromRemote(this.employee).subscribe(
       data =>{
         console.log("Response Recieved");
-        this.msg= "Employee Registered" ;
+        alert("Employee Registered") ;
       },
       error =>{
         console.log("Exception Occured");
-        this.msg=error.error;
+       alert ("UserId " +this.employee.userId+ " already exists");
       }
     )
 

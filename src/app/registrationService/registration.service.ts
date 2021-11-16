@@ -17,7 +17,7 @@ export class RegistrationService {
   }
 
   public registerEmployeeFromRemote(employee :Employee):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/registeremployee", employee);
+    return this._http.post<any>("http://localhost:8080/registeremployee" ,employee);
   }
 
  /*  handleError(error: Response){
