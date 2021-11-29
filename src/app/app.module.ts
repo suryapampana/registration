@@ -14,6 +14,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotUseridComponent } from './forgot-userid/forgot-userid.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent,
     RegistrationComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ForgotPasswordComponent,
+    ForgotUseridComponent
   ],
   imports: [
     BrowserModule,

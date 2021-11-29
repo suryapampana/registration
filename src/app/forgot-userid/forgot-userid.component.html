@@ -1,0 +1,64 @@
+<div class="login-form">
+    <div class = "container">
+      <div class="main">
+        <div class="form-img">
+         <img src="login.png">
+        </div>
+        <div class="content">
+          <h2>APAC Platform</h2>
+         <h1>Millennial Garage</h1>
+          <h3>Forgot UserId...? </h3>
+          <form #forgotUserIdform="ngForm" (ngSubmit)="sendUserId()">
+           <small class="text-danger">{{ msg }}</small>
+
+
+           <div *ngIf="userid.errors && userid.invalid && userid.touched">
+             <small class="text-danger" *ngIf="userid.errors.required"
+               >userid is required</small
+             >
+             <small class="text-danger" *ngIf="userid.errors.pattern"
+               >enter eight letter userid..!</small
+             >
+           </div>
+            <input type="userid"
+            class="form-control"
+            aria-describedby="useridHelp"
+            placeholder="EmployeeId"
+            [(ngModel)]="employee.userId"
+            [ngModelOptions]="{ standalone: true }"
+            required
+            #userid="ngModel"
+            [class.is-invalid]="userid.invalid && userid.touched"
+            pattern="[A-Za-z]{8,}">
+
+
+
+
+            <div>
+            <small class="text-danger" [class.d-none]="emailid.valid || emailid.untouched">email pattern should be demo@capgemini.com</small>
+        </div>
+            <input type="email"
+            id="emailaddress"
+            class="form-control"
+            aria-describedby="emailid"
+            placeholder="EmailId"
+            [(ngModel)]="employee.emailId"
+            [ngModelOptions]="{ standalone: true }"
+            required
+            #emailid="ngModel"
+            size="64" 
+            maxLength="64"
+            pattern=".+@capgemini\.com"
+            [class.is-invalid]="emailid.invalid && emailid.touched"
+            >
+
+            <button class="btn btn-primary" type="submit">Send</button>
+            <button class="btn btn-danger" routerLink="/login">Cancel</button>
+          </form>
+          <a href="#" routerLink="/forgotpassword">Forgot Password? </a>
+            <p> Terms and Conditions &nbsp; &nbsp;</p>
+            <p>&nbsp; Privacy Policy </p>
+        </div>
+      </div>
+    </div>
+  </div>

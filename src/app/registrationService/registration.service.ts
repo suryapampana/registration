@@ -25,4 +25,7 @@ export class RegistrationService {
           this.status = false;
 
   } */
+  public forgotPasswordFromRemote(employee: Employee):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/sendpassword",employee)
+  }
 }
