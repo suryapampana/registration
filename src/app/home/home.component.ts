@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../employee/employee';
 
@@ -9,6 +10,7 @@ import { Employee } from '../employee/employee';
 })
 export class HomeComponent implements OnInit {
 userId = '';
+@Input() insideSideNav!: MatSidenav;
   
    
 

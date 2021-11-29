@@ -12,12 +12,12 @@ export class RegistrationService {
   constructor(private _http : HttpClient ) { }
 
   public loginEmployeeFromRemote(employee: Employee):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/loginemployee",employee)
+    return this._http.post<any>("http://localhost:8080/loginuser",employee)
 
   }
 
   public registerEmployeeFromRemote(employee :Employee):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/registeremployee" ,employee);
+    return this._http.post<any>("http://localhost:8080/registeruser" ,employee);
   }
 
  /*  handleError(error: Response){

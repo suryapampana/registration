@@ -73,14 +73,71 @@
 
  <!--Navbar-->
 
-<app-navbar></app-navbar>
- <div>
-   <h1>Welcome   </h1>
-<h1 class="text-danger">  {{userId}}</h1>
+ <nav class="navbar navbar-dark bg-white navbar-expand-sm d-flex justify-content-between">
+  <img  class="logo" src="cglogo.png" width="200" height="40">
+  <div class="collapse navbar-collapse " id="navbar-list-4">
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="color: #2B0A3D; font-family: 'Ubuntu'; font-size: large; font-style: oblique;font-weight: 500;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{userId}}
+          <img src="profilepic.png" width="30" height="30" class="rounded-circle margin-right: 10px">
+        </a>
+        <div class="dropdown-menu margin-top: 5px" aria-labelledby="navbarDropdownMenuLink ">
+          <a class="dropdown-item" href="#">Change Password</a>
+          <a class="dropdown-item" (click)="logoutEmployee()"><button type="button" class="btn btn-danger">SignOut</button></a>
+        </div>
+      </li>   
+    </ul>
+  </div>
+</nav>
+
+ <div class="welcome">
+   <div class="text">
+   <h2>Welcome to</h2>
+   <h1> Millennial Garage </h1>
+  </div>
  </div>
 
-   <button type="button"  class="btn-primary" (click)="logoutEmployee()">SignOut</button>
-   
+ <div class="row">
+  <div class="column">
+    <div class="card">
+      <h3 style="color: #2B0A3D;">Millennial Garage Dashboard</h3>
+      <p>APAC Platform</p>
+      <p>.......</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3 style="color: #CBA557;">Capability Development Planner</h3>
+      <p>Millennial Garage</p>
+      <p>APAC Platform</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3 style="color: #739A4A;">Digital Onboarding</h3>
+      <p>Millennial Garage</p>
+      <p>APAC Platform</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3 style="color: #E06632;">Ideathon</h3>
+      <p>Millennial Garage</p>
+      <p>APAC Platform</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+  <p>Confidential and for internal use only. Copyright ©2021. All rights reserved.</p>
+</div>
+
+
+  <!--  <button type="button"  class="btn-primary" (click)="logoutEmployee()">SignOut</button> -->
 
 
    

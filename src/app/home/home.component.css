@@ -1,0 +1,149 @@
+.welcome{
+    background: url('bg-home.png');
+    background-size: cover;
+    height: 176px;
+    width: 100%;
+    margin-top: 2px;
+    box-shadow: black;
+}
+.text{
+    padding: 40px;
+    margin-left: 10px;
+}
+.text h1{
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Ubuntu';
+    cursor: pointer;
+}
+.text h1:hover{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: cadetblue;
+}
+.text h2{
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.logo{
+    margin-left: 25px; 
+    margin-right: 10px;
+}
+
+  
+  body {
+    font-family: 'Ubuntu';
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 30px 30px;
+  }
+  .column h3{
+      font-family: 'Ubuntu';
+      font-weight: 1000;
+      cursor: pointer;
+  }
+  .column h3:hover{
+      font-size: large;
+  }
+  .column p{
+      color: darkgray;
+      font-family: 'Ubuntu';
+      line-height: 10px;
+      font-size: smaller;
+  }
+  
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 0px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    margin: 10px;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .card:hover{
+    border-top-color: #2B0A3D;
+    border-left-color:#CBA557;
+    border-bottom-color:#739A4A;
+    border-right-color:#E06632;      
+      border-style:  solid;
+      border-bottom-left-radius: 50px;
+      text-align:right;
+      transition-duration: 0.92s
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 2px;
+    }
+  }
+  
+  
+  
+
+  
+  @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Patrick+Hand&family=Varela+Round&display=swap');
+
+ .sidenav {
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.6);
+} 
+
+.font{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+.name{
+    color: #2B0A3D;
+}
+.img{
+    background: url('profilepic.png');
+}
+
+
+@media(max-width: 600px){
+    .welcome{
+      max-width: 100%; 
+    }
+    
+  }
+
+  .footer {
+      position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2B0A3D;
+    color: white;
+    text-align: center;
+  }
+  @media(max-width: 600px){
+    .footer{
+        position:relative;
+      max-width: 100%; 
+    }
+    
+  }
+  .kjkk{
+    background: url('cglogo.png');
+  }

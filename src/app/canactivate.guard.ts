@@ -12,7 +12,7 @@ export class CanactivateGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree
     {
-      if(localStorage.getItem("userId")== null && localStorage.getItem("password")== null){
+      if(localStorage.getItem("userId") == null && localStorage.getItem("password") == null){
          alert("Please enter credentials to login")
          this._router.navigate(["/login"])
        return false;

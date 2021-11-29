@@ -13,22 +13,27 @@ export class RegistrationComponent implements OnInit {
 
   employee = new Employee();
   msg = '';
+  userId = '';
   
 
   constructor(private _service : RegistrationService, private _router: Router) { }
 
   ngOnInit(): void {
+    this.userId = (localStorage.getItem('userId')!);
   }
 
   registerEmployee(){
     this._service.registerEmployeeFromRemote(this.employee).subscribe(
+      
       data =>{
         console.log("Response Recieved");
-        alert("Employee Registered") ;
+        localStorage.clear();
+        alert("password saved successfully..! you can signin now") ;
+        this._router.navigate(['/login'])
       },
       error =>{
         console.log("Exception Occured");
-       alert ("UserId " +this.employee.userId+ " already exists");
+       alert ("Check Details Again");
       }
     )
 

@@ -1,9 +1,13 @@
 export class Employee {
-    userId?:string;
-    password?:string;
-    conformPassword?:string;
+    userId!: string;
+    password!: string;
+    emailId!: string;
+    registerIndicationFlag!: number;
+    activeFlag!: string;
 
     constructor(){}
+
+  
 
 
     

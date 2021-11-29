@@ -1,4 +1,4 @@
-<div class="body image">
+<!-- <div class="body image">
   <div class="container">
     <div class="forms">
       <div class="form-content">
@@ -21,7 +21,7 @@
                   [class.is-invalid]="userid.invalid && userid.touched"
                   pattern="[A-Za-z]{8,}"
                 />
-                <!-- <small class="text-danger" [class.d-none]="userid.valid || userid.untouched">UserId is required</small> -->
+               
                 <div *ngIf="userid.errors && userid.invalid && userid.touched">
                   <small class="text-danger" *ngIf="userid.errors.required"
                     >User Id is required</small
@@ -30,7 +30,7 @@
                     >Enter Eight Letter User Id..!</small
                   >
                 </div>
-                <!-- <div id="useridHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+               
               </div>
 
               <div class="input-box">
@@ -45,7 +45,7 @@
                   [class.is-invalid]="password.invalid && password.touched"
                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 />
-                <!-- <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small> -->
+                
                 <div
                   *ngIf="
                     password.errors && password.invalid && password.touched
@@ -81,12 +81,92 @@
               >Sign Up here</small
             >
           </div>
-          <!-- <small class="text-primary" (click)="gotoregistration()">New User ? Sign Up here</small> -->
+          
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- {{loginform.form.valid}}
     [disabled] ="loginform.form.invalid" -->
+
+     <!-- line 23 <small class="text-danger" [class.d-none]="userid.valid || userid.untouched">UserId is required</small> -->
+
+ <!-- line 32 <div id="useridHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+
+     <!-- line 83 <small class="text-primary" (click)="gotoregistration()">New User ? Sign Up here</small> -->
+
+     <!-- line 47 <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small> -->
+
+
+  
+     <div class="login-form">
+       <div class = "container">
+         <div class="main">
+           <div class="form-img">
+            <img src="login.png">
+           </div>
+           <div class="content">
+             <h2>APAC Platform</h2>
+            <h1>Millennial Garage</h1>
+             <h3>Welcome Back.! </h3>
+             <form #loginform="ngForm" (ngSubmit)="loginEmployee()">
+              <small class="text-danger">{{ msg }}</small>
+
+
+              <div *ngIf="userid.errors && userid.invalid && userid.touched">
+                <small class="text-danger" *ngIf="userid.errors.required"
+                  >userid is required</small
+                >
+                <small class="text-danger" *ngIf="userid.errors.pattern"
+                  >enter eight eetter userid..!</small
+                >
+              </div>
+               <input type="userid"
+               class="form-control"
+               aria-describedby="useridHelp"
+               placeholder="UserId"
+               [(ngModel)]="employee.userId"
+               [ngModelOptions]="{ standalone: true }"
+               required
+               #userid="ngModel"
+               [class.is-invalid]="userid.invalid && userid.touched"
+               pattern="[A-Za-z]{8,}">
+
+
+               <div
+                    *ngIf="
+                      password.errors && password.invalid && password.touched
+                    "
+                  >
+                    <small class="text-danger" *ngIf="password.errors.required"
+                      >password is required</small
+                    >
+                    <small class="text-danger" *ngIf="password.errors.pattern"
+                      >enter correct pattern..!</small
+                    >
+                  </div>
+               <input type="password"
+               class="form-control"
+               placeholder="Password"
+               [(ngModel)]="employee.password"
+               [ngModelOptions]="{ standalone: true }"
+               required
+               #password="ngModel"
+               [class.is-invalid]="password.invalid && password.touched"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+
+
+               <button class="btn btn-primary" type="submit">Sign In</button>
+             </form>
+             <a href="#">Forgot UserId? </a>
+             <a href="#" routerLink="/forgot" data-bs-target="#staticBackdrop" data-bs-toggle="modal"> Forgot Password?</a>
+               <p> Terms and Conditions &nbsp; &nbsp;</p>
+               <p>&nbsp; Privacy Policy </p>
+           </div>
+         </div>
+       </div>
+     </div>
+    
+    
