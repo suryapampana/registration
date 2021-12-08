@@ -19,7 +19,10 @@ export class RegistrationComponent implements OnInit {
   constructor(private _service : RegistrationService, private _router: Router) { }
 
   ngOnInit(): void {
-    this.userId = (localStorage.getItem('userId')!);
+    if(localStorage.getItem('userId')){
+    this.userId = localStorage.getItem('userId')!;
+    console.log(this.userId , localStorage.getItem('userId'));
+    }
   }
 
   registerEmployee(){
