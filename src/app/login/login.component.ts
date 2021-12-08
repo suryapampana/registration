@@ -17,22 +17,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  loginEmployee() {
+  loginEmployee(): void {
     this._service.loginEmployeeFromRemote(this.employee).subscribe((data) => {
       const employeeDetails = data;
-      if (employeeDetails.registerIndicationFlag === 0) {
+      if (employeeDetails[0].registerIndicationFlag === 0) {
         localStorage.setItem('userId', this.employee.userId);
         console.log(' Set New Credentials');
         this._router.navigate(['/registration']);
       } 
-      else if(employeeDetails.registerIndicationFlag === 1){
+      else if(employeeDetails[0].registerIndicationFlag === 1){
         localStorage.setItem('userId', this.employee.userId);
         localStorage.setItem('password', this.employee.password);
+        localStorage.setItem('employeeId',JSON.stringify(this.employee.employeeId));
         console.log('response recieved');
         this._router.navigate(['/home']);
       }
       else {
-        console.log("inavlid credentials");
+        console.log("Invalid Credentials");
       }
     },
     error=>{

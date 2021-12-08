@@ -12,6 +12,7 @@ import { RegistrationService } from '../registrationService/registration.service
 export class ForgotPasswordComponent implements OnInit {
   employee = new Employee();
   msg = '';
+  
 
   constructor(private _service: RegistrationService, private _router: Router) { }
 
@@ -29,8 +30,8 @@ export class ForgotPasswordComponent implements OnInit {
         this._router.navigate(['/login'])
       },
       
-      erro=>{
-        console.log("Exception Occured");
+      error=>{
+        console.log("Error Occured");
         alert("check details again");
       }
       );

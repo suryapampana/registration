@@ -5,31 +5,28 @@
          <img src="login.png">
         </div>
         <div class="content">
-          <h2>APAC Platform</h2>
-         <h1>Millennial Garage</h1>
+          <h2>Welcome To</h2>
+            <h1>APAC Platform</h1>
           <h3>Forgot UserId...? </h3>
           <form #forgotUserIdform="ngForm" (ngSubmit)="sendUserId()">
            <small class="text-danger">{{ msg }}</small>
 
 
-           <div *ngIf="userid.errors && userid.invalid && userid.touched">
-             <small class="text-danger" *ngIf="userid.errors.required"
-               >userid is required</small
-             >
-             <small class="text-danger" *ngIf="userid.errors.pattern"
-               >enter eight letter userid..!</small
+           <div *ngIf="employeeid.errors && employeeid.invalid && employeeid.touched">
+             <small class="text-danger" *ngIf="employeeid.errors.required"
+               >employeeid is required</small
              >
            </div>
-            <input type="userid"
+            <input type="employeeid"
             class="form-control"
-            aria-describedby="useridHelp"
+            aria-describedby="employeeidHelp"
             placeholder="EmployeeId"
-            [(ngModel)]="employee.userId"
+            [(ngModel)]="employee.employeeId"
             [ngModelOptions]="{ standalone: true }"
             required
-            #userid="ngModel"
-            [class.is-invalid]="userid.invalid && userid.touched"
-            pattern="[A-Za-z]{8,}">
+            #employeeid="ngModel"
+            [class.is-invalid]="employeeid.invalid && employeeid.touched"
+            >
 
 
 

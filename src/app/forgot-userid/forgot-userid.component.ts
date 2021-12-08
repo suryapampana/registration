@@ -17,7 +17,20 @@ export class ForgotUseridComponent implements OnInit {
   ngOnInit(): void {
   }
   sendUserId(){
+      this._service.forgotUserIdFromRemote(this.employee).subscribe(
+        data=>{
+          console.log("Mail Sent Successfull");
+          localStorage.clear();
+          alert("Email sent successfully.. check your inbox");
+          this._router.navigate(['/login'])
+        },
+        
+        error=>{
+          console.log("Error Occur");
+          alert("check details again");
+        }
+        );
+    }
     
   }
 
-}

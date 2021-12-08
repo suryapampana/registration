@@ -28,4 +28,8 @@ export class RegistrationService {
   public forgotPasswordFromRemote(employee: Employee):Observable<any>{
     return this._http.post<any>("http://localhost:8080/sendpassword",employee)
   }
+
+  public forgotUserIdFromRemote(employee: Employee):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/senduserid",employee)
+  }
 }

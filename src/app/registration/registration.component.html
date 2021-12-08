@@ -127,8 +127,8 @@
                        <img src="login.png">
                       </div>
                       <div class="content">
-                        <h2>APAC Platform</h2>
-                       <h1>Millennial Garage</h1>
+                        <h2>Welcome To</h2>
+                        <h1>APAC Platform</h1>
                         <h3>Set New Password </h3>
                         <form #registrationform="ngForm" novalidate (ngSubmit)="registerEmployee()">
                           <small class="text-danger">{{ msg }}</small>
@@ -147,6 +147,7 @@
                           class="form-control"
                           aria-describedby="useridHelp"
                           placeholder="UserId"
+                          [value]="userId"
                           [(ngModel)]="employee.userId"
                           [ngModelOptions]="{ standalone: true }"
                           required
