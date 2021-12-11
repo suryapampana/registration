@@ -10,6 +10,7 @@ import { Employee } from '../employee/employee';
 })
 export class HomeComponent implements OnInit {
 userId = '';
+fullName = '';
 @Input() insideSideNav!: MatSidenav;
   
    
@@ -18,6 +19,8 @@ userId = '';
 
   ngOnInit() {
     this.userId = (localStorage.getItem('userId')!);
+    this.fullName = (localStorage.getItem('fullName')!);
+    
   }
 logoutEmployee(){
   localStorage.clear();

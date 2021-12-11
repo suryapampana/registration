@@ -16,6 +16,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ForgotUseridComponent } from './forgot-userid/forgot-userid.component';
+import { CdpEmployeeComponent } from './cdp-employee/cdp-employee.component';
+import { CdpManagerComponent } from './cdp-manager/cdp-manager.component';
+import { CdpLeaderComponent } from './cdp-leader/cdp-leader.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ForgotUseridComponent } from './forgot-userid/forgot-userid.component';
     HomeComponent,
     NavbarComponent,
     ForgotPasswordComponent,
-    ForgotUseridComponent
+    ForgotUseridComponent,
+    CdpEmployeeComponent,
+    CdpManagerComponent,
+    CdpLeaderComponent
   ],
   imports: [
     BrowserModule,

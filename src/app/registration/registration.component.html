@@ -139,9 +139,7 @@
                             <small class="text-danger" *ngIf="userid.errors.required"
                               >userid is required</small
                             >
-                            <small class="text-danger" *ngIf="userid.errors.pattern"
-                              >enter eight letter userid..!</small
-                            >
+                            
                           </div>
                           <input type="userid"
                           class="form-control"
@@ -153,7 +151,7 @@
                           required
                           #userid="ngModel"
                           [class.is-invalid]="userid.invalid && userid.touched"
-                          pattern="[A-Za-z]{8,}">
+                          >
 
                           
                           <div
