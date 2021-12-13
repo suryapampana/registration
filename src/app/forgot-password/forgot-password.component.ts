@@ -31,7 +31,7 @@ export class ForgotPasswordComponent implements OnInit {
       },
       
       error=>{
-        console.log("Error Occured");
+        console.log(error);
         alert("check details again");
       }
       );
