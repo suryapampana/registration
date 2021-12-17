@@ -13,8 +13,8 @@ import { CdpLeaderComponent } from './cdp-leader/cdp-leader.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
-  {path:"home", component:HomeComponent, canActivate:[CanactivateGuard]},
-  {path:"registration", component:RegistrationComponent,canActivate:[CanactivateGuard]},
+  {path:"home", component:HomeComponent, canActivate: [CanactivateGuard]},
+  {path:"registration", component:RegistrationComponent, canActivate: [CanactivateGuard]},
   {path:"login", component:LoginComponent},
   {path:"forgotpassword", component:ForgotPasswordComponent},
   {path:"forgotuserid", component:ForgotUseridComponent},

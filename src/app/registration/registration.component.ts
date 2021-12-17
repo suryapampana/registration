@@ -21,7 +21,6 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
     if(localStorage.getItem('userId')){
     this.userId = localStorage.getItem('userId')!;
-    console.log(this.userId , localStorage.getItem('userId'));
     }
   }
 

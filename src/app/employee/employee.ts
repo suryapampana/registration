@@ -33,6 +33,7 @@ export class Employee {
     serviceLineDescription: string;
     n1EmpId: number;
     n1EmpName: string;
+    jwtToken: string;
 
 
 

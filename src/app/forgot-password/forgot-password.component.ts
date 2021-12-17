@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Employee } from '../employee/employee';
 import { RegistrationService } from '../registrationService/registration.service';
 
+
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
