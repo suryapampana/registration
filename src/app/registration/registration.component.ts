@@ -21,10 +21,14 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
     if(localStorage.getItem('userId')){
     this.userId = localStorage.getItem('userId')!;
+    this.employee.userId = this.userId;
     }
   }
 
+
+
   registerEmployee(){
+
     this._service.registerEmployeeFromRemote(this.employee).subscribe(
       
       data =>{

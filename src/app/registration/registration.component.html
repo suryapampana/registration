@@ -145,11 +145,12 @@
                           class="form-control"
                           aria-describedby="useridHelp"
                           placeholder="UserId"
-                          [(ngModel)]="employee.userId"
+                          [(ngModel)]="userId"
                           [ngModelOptions]="{ standalone: true }"
                           required
                           #userid="ngModel"
                           [class.is-invalid]="userid.invalid && userid.touched"
+                          readonly
                           >
 
                           

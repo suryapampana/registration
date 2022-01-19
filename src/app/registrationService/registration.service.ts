@@ -27,12 +27,12 @@ export class RegistrationService {
             localStorage.setItem("userId", employee.userId);
             let tokenStr = data.jwtToken;
             localStorage.setItem("token", tokenStr);
-            const encodeToken = (localStorage.getItem('token'));
+          /*   const encodeToken = (localStorage.getItem('token'));
     const decodeToken: any = jwt_decode(encodeToken!);
     const date = new Date(0);
 
     let tokenExpDate = date.setUTCSeconds(decodeToken.exp);
-            console.log(decodeToken.exp, date);
+            console.log(decodeToken.exp, date); */
             /* return data;  */
             }
           }
