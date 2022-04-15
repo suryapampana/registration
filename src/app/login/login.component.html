@@ -91,48 +91,51 @@
 <!-- {{loginform.form.valid}}
     [disabled] ="loginform.form.invalid" -->
 
-     <!-- line 23 <small class="text-danger" [class.d-none]="userid.valid || userid.untouched">UserId is required</small> -->
+<!-- line 23 <small class="text-danger" [class.d-none]="userid.valid || userid.untouched">UserId is required</small> -->
 
- <!-- line 32 <div id="useridHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+<!-- line 32 <div id="useridHelp" class="form-text">We'll never share your email with anyone else.</div> -->
 
-     <!-- line 83 <small class="text-primary" (click)="gotoregistration()">New User ? Sign Up here</small> -->
+<!-- line 83 <small class="text-primary" (click)="gotoregistration()">New User ? Sign Up here</small> -->
 
-     <!-- line 47 <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small> -->
+<!-- line 47 <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small> -->
 
-
-  
-     <div class="login-form">
-       <div class = "container">
-         <div class="main">
-           <div class="form-img">
-            <img src="login.png">
-           </div>
-           <div class="content">
-             <h2>Welcome To</h2>
-            <h1>APAC Platform</h1>
-             <h3>Welcome Back.! </h3>
-             <form #loginform="ngForm" (ngSubmit)="loginEmployee()">
-              <small class="text-danger">{{ msg }}</small>
+<div class="login-form">
+  <div class="container">
+    <div class="main">
+      <div class="form-img">
+        <img src="assets\Login Template.png" alt="loginbackground" />
+      </div>
+      <div class="content">
+        <h2>Welcome To</h2>
+        <h1>APAC World</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="loginEmployee()">
+          <!--  <small class="text-danger">{{ msg }}</small>
 
 
               <div *ngIf="userid.errors && userid.invalid && userid.touched">
                 <small class="text-danger" *ngIf="userid.errors.required"
                   >userid is required</small
                 >
-              </div>
-               <input type="userid"
-               class="form-control"
-               aria-describedby="useridHelp"
-               placeholder="UserId"
-               [(ngModel)]="employee.userId"
-               [ngModelOptions]="{ standalone: true }"
-               required
-               #userid="ngModel"
-               [class.is-invalid]="userid.invalid && userid.touched"
-               >
+              </div> -->
+          <div>
+            <small
+              class="text-danger"
+              *ngIf="userid?.touched && userid?.invalid"
+              >User Id is required</small
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="useridHelp"
+            placeholder="User Id"
+            [(ngModel)]="employee.userId"
+            minlength="2"
+            required
+            formControlName="userid"
+          />
 
-
-               <div
+          <!-- <div
                     *ngIf="
                       password.errors && password.invalid && password.touched
                     "
@@ -143,27 +146,38 @@
                     <small class="text-danger" *ngIf="password.errors.pattern"
                       >enter correct pattern..!</small
                     >
-                  </div>
-               <input type="password"
-               class="form-control"
-               placeholder="Password"
-               [(ngModel)]="employee.password"
-               [ngModelOptions]="{ standalone: true }"
-               required
-               #password="ngModel"
-               [class.is-invalid]="password.invalid && password.touched"
-               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                  </div> -->
 
+          <div>
+            <small
+              class="text-danger"
+              *ngIf="password?.invalid && password?.touched"
+              >Password is required</small
+            >
+          </div>
 
-               <button class="btn btn-primary" type="submit">Sign In</button>
-             </form>
-             <a href="#" routerLink = "/forgotuserid" >Forgot UserId? </a>
-             <a href="#" routerLink = "/forgotpassword" > Forgot Password?</a>
-               <p> Terms and Conditions &nbsp; &nbsp;</p>
-               <p>&nbsp; Privacy Policy </p>
-           </div>
-         </div>
-       </div>
-     </div>
-    
-    
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            [(ngModel)]="employee.password"
+            required
+            formControlName="password"
+          />
+
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="loginForm.invalid"
+          >
+            Sign In
+          </button>
+        </form>
+        <a href="#" routerLink="/forgotuserid">Forgot User Id? </a>
+        <a href="#" routerLink="/forgotpassword"> Forgot Password?</a>
+        <p>Terms and Conditions &nbsp; &nbsp;</p>
+        <p>&nbsp; Privacy Policy</p>
+      </div>
+    </div>
+  </div>
+</div>

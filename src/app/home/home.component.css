@@ -1,10 +1,11 @@
 .welcome{
     background: url('bg-home.png');
     background-size: cover;
-    height: 176px;
+    height: 150px;
     width: 100%;
     margin-top: 2px;
     box-shadow: black;
+    
 }
 .text{
     padding: 40px;
@@ -15,7 +16,6 @@
     justify-content: center;
     color: white;
     font-family: 'Ubuntu';
-    cursor: pointer;
 }
 .text h1:hover{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -26,11 +26,11 @@
     justify-content: center;
     color: white;
     font-weight: 8;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Ubuntu
 }
 .logo{
-    margin-left: 25px; 
-    margin-right: 10px;
+    margin-left: 20px; 
+    /* margin-right: 10px; */
 }
 
   
@@ -42,20 +42,22 @@
   .column {
     float: left;
     width: 25%;
-    padding: 30px 30px;
+    padding: 20px 20px;
   }
   .column h3{
       font-family: 'Ubuntu';
       font-weight: 1000;
       cursor: pointer;
+      color: #E06632;
   }
   .column h3:hover{
-      font-size: large;
-  }
+      color: white;
+      background-color: #2b0a3dc4;
+  } 
   .column p{
       color: darkgray;
       font-family: 'Ubuntu';
-      line-height: 10px;
+      line-height: 20px;
       font-size: smaller;
   }
   
@@ -72,11 +74,11 @@
   /* Style the counter cards */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    margin: 10px;
+    height: 7.5rem;
+    
+   /*  margin: 5px; */
     text-align: center;
     background-color: white;
-    cursor: pointer;
     border-radius: 5px;
   }
   .card:hover{
@@ -85,17 +87,17 @@
     border-bottom-color:#739A4A;
     border-right-color:#E06632;      
       border-style:  solid;
-      border-bottom-left-radius: 50px;
-      text-align:right;
+     /*  border-bottom-left-radius: 50px; */
       transition-duration: 0.92s
   }
   
+
   /* Responsive columns */
   @media screen and (max-width: 600px) {
     .column {
       width: 100%;
       display: block;
-      margin-bottom: 2px;
+      margin-bottom: 5px;
     }
   }
   
@@ -117,7 +119,7 @@
     color: #2B0A3D;
 }
 .img{
-    background: url('profilepic.png');
+    background: url('/assets/profilepic.png');
 }
 
 
@@ -137,13 +139,89 @@
     color: white;
     text-align: center;
   }
+
   @media(max-width: 600px){
     .footer{
-        position:relative;
+        position:fixed;
       max-width: 100%; 
     }
     
   }
   .kjkk{
-    background: url('cglogo.png');
+    background: url('/assets/cglogo.png');
   }
+
+  ::ng-deep .success {
+    color: rgb(243, 241, 241);
+    font-weight: 500;
+    background: #05cf0f9d;
+  box-shadow: 0 8px 32px 0 rgba(165, 170, 240, 0.37);
+  backdrop-filter: blur( 9px );
+  -webkit-backdrop-filter: blur( 9px );
+  border-radius: 10px;
+  }
+
+  
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+.mat-toolbar {
+  background: white;
+  color: #2B0A3D;
+  box-shadow: #fff;
+  height: 40px;
+}
+.span{
+  font-family: Ubuntu;
+}
+::ng-deep .menu{
+  background: white;
+  margin-top: 10px;
+}
+.icon{
+  color: red;
+  margin-top: 5px;
+  size: 20px;
+}
+.logout{
+  color: red;
+  font-family: Ubuntu;
+  font-weight: 500;
+}
+.name{
+  cursor: pointer;
+  font-size: large;
+  margin-right: 4px;
+}
+.profilepic{
+  cursor: pointer;
+}
+
+.mat{
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.082);
+
+  background-color: red;
+
+  border: 0px;
+}
+
+.paragraph{
+  text-overflow: ellipsis;
+overflow: hidden;
+white-space: pre-wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

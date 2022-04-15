@@ -8,7 +8,7 @@ export class Employee {
     activeFlag: string;
     role: string;
     emailId: string;
-    employeeId: number;
+    localEmployeeId: string;
     fullName: string;
     perner: number;
     globalEmployeeId: number;
@@ -31,7 +31,7 @@ export class Employee {
     subBu: string;
     serviceLineCode: string;
     serviceLineDescription: string;
-    n1EmpId: number;
+    n1EmpId: string;
     n1EmpName: string;
     jwtToken: string;
 

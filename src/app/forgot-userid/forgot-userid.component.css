@@ -1,7 +1,7 @@
 .img{
-    background: url('login.png');
+    background: url("/assets/Login Template.png");
   }
-
+ 
 
   *{
     padding: 0;
@@ -185,4 +185,22 @@ border-radius: 35px;
   align-items: center;
   justify-content: center;
   position: relative;
+}
+::ng-deep .success {
+  color: rgb(243, 241, 241);
+  font-weight: 500;
+  background: #05cf0f9d;
+box-shadow: 0 8px 32px 0 rgba(165, 170, 240, 0.37);
+backdrop-filter: blur( 9px );
+-webkit-backdrop-filter: blur( 9px );
+border-radius: 10px;
+}
+::ng-deep .danger {
+  color: rgb(243, 241, 241);
+  font-weight: 500;
+  background: #d8090986;
+box-shadow: 0 8px 32px 0 rgba(165, 170, 240, 0.37);
+backdrop-filter: blur( 9px );
+-webkit-backdrop-filter: blur( 9px );
+border-radius: 10px;
 }

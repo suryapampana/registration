@@ -2,30 +2,29 @@
     <div class = "container">
       <div class="main">
         <div class="form-img">
-         <img src="login.png">
+         <img src="assets\Login Template.png" alt="backgroundimage">
         </div>
         <div class="content">
           <h2>Welcome To</h2>
-            <h1>APAC Platform</h1>
-          <h3>Forgot UserId...? </h3>
-          <form #forgotUserIdform="ngForm" (ngSubmit)="sendUserId()">
+            <h1>APAC World</h1>
+          <h3>Forgot User Id...? </h3>
+          <form [formGroup]="forgotUserIdForm" (ngSubmit)="sendUserId()">
            <small class="text-danger">{{ msg }}</small>
 
 
-           <div *ngIf="employeeid.errors && employeeid.invalid && employeeid.touched">
-             <small class="text-danger" *ngIf="employeeid.errors.required"
-               >employeeid is required</small
+           <div>
+             <small class="text-danger" *ngIf="employeeid?.invalid && employeeid?.touched"
+               >Employee Id is required</small
              >
            </div>
             <input type="employeeid"
             class="form-control"
             aria-describedby="employeeidHelp"
-            placeholder="EmployeeId"
-            [(ngModel)]="employee.employeeId"
-            [ngModelOptions]="{ standalone: true }"
+            placeholder="Employee Id"
+            [(ngModel)]="employee.localEmployeeId"
+            
             required
-            #employeeid="ngModel"
-            [class.is-invalid]="employeeid.invalid && employeeid.touched"
+           formControlName="employeeid"
             >
 
 
@@ -49,7 +48,7 @@
             [class.is-invalid]="emailid.invalid && emailid.touched"
             > -->
 
-            <button class="btn btn-primary" type="submit">Send</button>
+            <button class="btn btn-primary" type="submit" [disabled]="forgotUserIdForm.invalid">Send</button>
             <button class="btn btn-danger" routerLink="/login">Cancel</button>
           </form>
           <a href="#" routerLink="/forgotpassword">Forgot Password? </a>

@@ -7,7 +7,6 @@ import { CanactivateGuard } from './canactivate.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ForgotUseridComponent } from './forgot-userid/forgot-userid.component';
 import { CdpEmployeeComponent } from './cdp-employee/cdp-employee.component';
-import { CdpManagerComponent } from './cdp-manager/cdp-manager.component';
 import { CdpLeaderComponent } from './cdp-leader/cdp-leader.component';
 
 
@@ -19,7 +18,6 @@ const routes: Routes = [
   {path:"forgotpassword", component:ForgotPasswordComponent},
   {path:"forgotuserid", component:ForgotUseridComponent},
   {path:"cdp-employee", component:CdpEmployeeComponent},
-  {path:"cdp-manager", component:CdpManagerComponent},
   {path:"cdp-leader", component:CdpLeaderComponent}
 
   

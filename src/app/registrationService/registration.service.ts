@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { Employee } from '../employee/employee';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { catchError, map } from "rxjs/operators";
 import jwt_decode, { JwtPayload } from 'jwt-decode';
+import { CookieService } from 'ngx-cookie-service';
 
 
 const headers = new HttpHeaders().set('Content-Type', 'application/json');
@@ -11,15 +12,17 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json');
   providedIn: 'root'
 })
 export class RegistrationService {
+  
   status: string;
   exp: number;
+  
  
   
 
-  constructor(private _http : HttpClient ) { }
+  constructor(private _http : HttpClient, private cookieService: CookieService ) { }
 
   public loginEmployeeFromRemote(employee: Employee){
-    return this._http.post<any>("http://localhost:8080/loginuser",{userId: employee.userId, password: employee.password})
+    return this._http.post<any>("http://apacworld.in.capgemini.com:9090/MillennialGarageLogin/loginuser",{userId: employee.userId, password: employee.password})
       .pipe(catchError(this.handleError),
         map(
           data => {
@@ -27,6 +30,9 @@ export class RegistrationService {
             localStorage.setItem("userId", employee.userId);
             let tokenStr = data.jwtToken;
             localStorage.setItem("token", tokenStr);
+            /* sessionStorage.setItem("token", tokenStr);
+            this.cookieService.set("token", tokenStr);  */
+
           /*   const encodeToken = (localStorage.getItem('token'));
     const decodeToken: any = jwt_decode(encodeToken!);
     const date = new Date(0);
@@ -41,10 +47,11 @@ export class RegistrationService {
       ) 
   }
 
-  isUserLoggedIn() {
+  isUserLoggedIn():boolean {
     let userId = localStorage.getItem("userId");
-    let token  = localStorage.getItem("token")
-    return !(userId === null && token === null);    
+    let token  = localStorage.getItem("token");
+    return !(userId === null && token === null); 
+     
   } 
 
   autoLogout(): boolean{
@@ -87,7 +94,7 @@ export class RegistrationService {
   }
 
   public registerEmployeeFromRemote(employee :Employee):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/registeruser" ,employee)
+    return this._http.post<any>("http://apacworld.in.capgemini.com:9090/MillennialGarageLogin/registeruser" ,employee)
     .pipe(catchError(this.handleError));
   }
 
@@ -97,24 +104,33 @@ export class RegistrationService {
 
   } */
   public forgotPasswordFromRemote(employee: Employee):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/sendpassword",employee)
-    .pipe(catchError(this.handleError));
+    return this._http.post<any>("http://apacworld.in.capgemini.com:9090/MillennialGarageLogin/sendpassword",employee)
   }
 
   public forgotUserIdFromRemote(employee: Employee):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/senduserid",employee)
-    .pipe(catchError(this.handleError));
+    return this._http.post<any>("http://apacworld.in.capgemini.com:9090/MillennialGarageLogin/senduserid",employee)
   }
 
   userid = localStorage.getItem("userId")
 
   public getUserByUserIdFromRemote(employee: Employee):Observable<any>{
-    return this._http.get<any>("http://localhost:8080/user" + '/'+ localStorage.getItem("userId"),{ headers
+    return this._http.get<any>("http://apacworld.in.capgemini.com:9090/MillennialGarageLogin/user" + '/'+ localStorage.getItem("userId"),{ headers
     } )
     .pipe(catchError(this.handleError));
   }
 
+
+  public getAllProjects():Observable<any>{
+    return this._http.get<any>("http://apacworld.in.capgemini.com:9090/MillennialGarageLogin/getallprojects" ,{ headers
+    } )
+    .pipe(catchError(this.handleError));
+  }
   
+  public getProjectsById(id: number):Observable<any>{
+    return this._http.get<any>(`http://apacworld.in.capgemini.com:9090/MillennialGarageLogin/getprojects/${id}` ,{ headers
+    } )
+    .pipe(catchError(this.handleError));
+  }
    
   
 
